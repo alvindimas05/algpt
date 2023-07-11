@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ALGPT" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:textColor">#FFF</item>
+        <item name="android:textColorPrimary">#FFF</item>
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:colorPrimaryDark">@color/background</item>
+    </style>
+
+    <style name="Theme.ALGPT" parent="Base.Theme.ALGPT" />
+</resources>

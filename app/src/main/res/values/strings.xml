@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AL-GPT</string>
+    <string name="api_url">http://gpt.ancritbat.my.id</string>
+    <string name="default_prompt">You are a helpful assistant</string>
+    <string name="insert_prompt_msg">You can change your custom prompt here before you chat.</string>
+    <string name="default_prompt_hint">Your custom prompt</string>
+</resources>
