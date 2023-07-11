@@ -1,9 +1,7 @@
 package my.alvindimas.al_gpt
 
-import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageButton
@@ -56,9 +54,9 @@ class MainActivity : AppCompatActivity() {
         findViewById<EditText>(R.id.ai_display_name).setText(pref.getString("ai_name", "Assistant"))
 
         findViewById<ImageButton>(R.id.btn_send).setOnClickListener { onClick(it) }
-        findViewById<ImageButton>(R.id.btn_reset).setOnClickListener { onReset(it) }
+        findViewById<ImageButton>(R.id.btn_reset).setOnClickListener { onReset() }
     }
-    private fun onReset(v: View){
+    private fun onReset(){
         if(!interact){
             Toast.makeText(this, "Nothing to reset!", Toast.LENGTH_SHORT).show()
             return
@@ -66,13 +64,13 @@ class MainActivity : AppCompatActivity() {
         AlertDialog.Builder(this)
             .setTitle("Warning!")
             .setMessage("Are you sure you want to reset this chats?")
-            .setPositiveButton("Yes", DialogInterface.OnClickListener { _, _ ->
+            .setPositiveButton("Yes") { _, _ ->
                 run {
                     val db = DBHelper(this).writableDatabase
                     db.execSQL("DELETE FROM chats")
                     recreate()
                 }
-            })
+            }
             .setNegativeButton("No", null).show()
     }
     private fun addMessage(msg: String, isUser: Boolean = true, insert: Boolean = true){
