@@ -4,7 +4,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-private val DATABASE_VERSION = 1
+private val DATABASE_VERSION = 2
 private val DATABASE_NAME = "algpt"
 class DBHelper(
     context: Context
@@ -12,6 +12,7 @@ class DBHelper(
 
     override fun onCreate(db: SQLiteDatabase?) {
         val sql = "CREATE TABLE IF NOT EXISTS chats (" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "chat TEXT NOT NULL," +
                 "isUser INTEGER NOT NULL" +
                 ")"
