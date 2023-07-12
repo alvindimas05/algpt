@@ -100,7 +100,8 @@ class MainActivity : AppCompatActivity() {
         val ainame = findViewById<EditText>(R.id.ai_display_name).text.toString()
 
         val pref = getPreferences(MODE_PRIVATE).edit()
-        pref.putString("prompt", prompt.text.toString())
+        val prom = prompt.text.toString()
+        pref.putString("prompt", prom.ifEmpty { "You are a helpful assistant" })
         pref.putString("user_name", username.ifEmpty { "User" })
         pref.putString("ai_name", ainame.ifEmpty { "Assistant" })
         pref.apply()
